@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>epam</groupId>
-	<artifactId>pet-clinic</artifactId>
+	<groupId>tajawal</groupId>
+	<artifactId>tajawal-automation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -37,27 +37,13 @@
 			<artifactId>testng</artifactId>
 			<version>6.8</version>
 		</dependency>	
-		<dependency>
-		<groupId>io.rest-assured</groupId>
-		<artifactId>rest-assured</artifactId>
-		<version>3.0.2</version>
-		<scope>test</scope>
-	</dependency> 
+	
 <dependency>
     		<groupId>io.rest-assured</groupId>
     		<artifactId>json-schema-validator</artifactId>
     		<version>3.3.0</version>
 		</dependency>
-		<dependency>
-    		<groupId>com.github.fge</groupId>
-    		<artifactId>json-schema-validator</artifactId>
-   			<version>2.2.6</version>
-		</dependency>
-		<dependency>
-    		<groupId>com.github.fge</groupId>
-    		<artifactId>json-schema-core</artifactId>
-    		<version>1.2.5</version>
-		</dependency> 
+		
  
 		
 	</dependencies>
@@ -67,6 +53,9 @@
 			<resource>
 				<directory>src/main/resources/properties/</directory>
 			</resource>
+			<resource>
+				<directory>src/main/resources/labels/</directory>
+			</resource>
 		</resources>	
 		<plugins>
 					<plugin>
@@ -75,43 +64,23 @@
 						<version>2.20.1</version>
 						<configuration>
 							<parallel>methods</parallel>
-							<threadCount>${threads}</threadCount>
+					
 							<perCoreThreadCount>true</perCoreThreadCount>
-							<!-- CHANGE THE PATH IF YOU CHANGE TEST NAME -->
-							<includes>
-								<include>**/*Regression.java</include>
-							</includes>
+						
 							<systemPropertyVariables>
 
 
 								<environment>${environment}</environment>
 							</systemPropertyVariables>
-							<!-- CHANGE THE PATH IF YOU CHANGE TEST SUITE NAME -->
+						
 							<suiteXmlFiles>
 								<suiteXmlFile>testng.xml</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>
-						<executions>
-							<execution>
-								<goals>
-									<goal>integration-test</goal>
-									<goal>verify</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-
-
-					<plugin>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<testFailureIgnore>false</testFailureIgnore>
-							<excludes>
-								<exclude>**/*Test.java</exclude>
-							</excludes>
 						
-						</configuration>
 					</plugin>
+
+
 				</plugins>
 	</build>
 	
