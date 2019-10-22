@@ -12,7 +12,7 @@ import com.tajawal.utils.TestData;
 /**
  * The class constructs Home page elements needed for tests
  * @author aida
- *
+ 
  */
 public class HomePage {
 	private DriverUtil driverUtil;
