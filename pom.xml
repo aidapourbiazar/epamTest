@@ -15,7 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<environment>dev</environment>
 	</properties>
-	
+
 
 
 	<dependencies>
@@ -36,18 +36,18 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.8</version>
-		</dependency>	
-	
-<dependency>
-    		<groupId>io.rest-assured</groupId>
-    		<artifactId>json-schema-validator</artifactId>
-    		<version>3.3.0</version>
 		</dependency>
-		
- 
-		
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
+
+
 	</dependencies>
-	
+
 	<build>
 		<resources>
 			<resource>
@@ -56,34 +56,34 @@
 			<resource>
 				<directory>src/main/resources/labels/</directory>
 			</resource>
-		</resources>	
+		</resources>
 		<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-failsafe-plugin</artifactId>
-						<version>2.20.1</version>
-						<configuration>
-							<parallel>methods</parallel>
-					
-							<perCoreThreadCount>true</perCoreThreadCount>
-						
-							<systemPropertyVariables>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.20.1</version>
+				<configuration>
+					<parallel>methods</parallel>
+
+					<perCoreThreadCount>true</perCoreThreadCount>
+
+					<systemPropertyVariables>
 
 
-								<environment>${environment}</environment>
-							</systemPropertyVariables>
-						
-							<suiteXmlFiles>
-								<suiteXmlFile>testng.xml</suiteXmlFile>
-							</suiteXmlFiles>
-						</configuration>
-						
-					</plugin>
+						<environment>${environment}</environment>
+					</systemPropertyVariables>
+
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+
+			</plugin>
 
 
-				</plugins>
+		</plugins>
 	</build>
-	
-	
+
+
 
 </project>
